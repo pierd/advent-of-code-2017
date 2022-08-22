@@ -132,15 +132,6 @@ fn main() {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use aoc_helpers::scaffold::{solve_part1, solve_part2};
-
-    const SAMPLE: &str = "";
-
-    #[test]
-    fn test_sample() {
-        assert_eq!(solve_part1::<Day23>(SAMPLE), Default::default());
-        assert_eq!(solve_part2::<Day23>(SAMPLE), Default::default());
-    }
 
     #[test]
     fn test_is_prime() {
