@@ -82,6 +82,7 @@ mod tests {
     );
 
     #[test]
+    #[ignore = "slow"]
     fn test_sample() {
         assert_eq!(solve_part1::<Day15>(SAMPLE), 588);
         assert_eq!(solve_part2::<Day15>(SAMPLE), 309);

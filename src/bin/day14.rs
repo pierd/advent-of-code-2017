@@ -30,7 +30,7 @@ impl Parse for TileMapHasher {
     fn parse(raw_input: &str) -> anyhow::Result<Self::Parsed> {
         let tiles: Vec<Vec<bool>> = (0..128)
             .into_iter()
-            .map(|row| u8s_to_bools(&knot_hash(&format!("{}-{}", raw_input, row))))
+            .map(|row| u8s_to_bools(&knot_hash(&format!("{raw_input}-{row}"))))
             .collect();
         Ok(TileMap::from(tiles))
     }

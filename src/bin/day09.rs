@@ -8,7 +8,7 @@ impl Problem for Day09 {
     type Part2 = usize;
 
     fn solve_part1(input: &<Self::Input as aoc_helpers::scaffold::Parse>::Parsed) -> Self::Part1 {
-        let mut depth = 0;
+        let mut depth: usize = 0;
         let mut score = 0;
         let mut ignore_next = false;
         let mut in_garbage = false;
@@ -25,9 +25,7 @@ impl Problem for Day09 {
                 in_garbage = true;
             } else if c == '}' {
                 score += depth;
-                if depth > 0 {
-                    depth -= 1;
-                }
+                depth = depth.saturating_sub(1);
             } else if c == '{' {
                 depth += 1;
             }

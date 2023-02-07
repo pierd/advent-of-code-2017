@@ -86,7 +86,7 @@ impl Problem for Day08 {
         for instr in input {
             instr.eval(&mut regs);
         }
-        regs.into_iter().map(|(_, v)| v).max().unwrap_or_default()
+        regs.into_values().max().unwrap_or_default()
     }
 
     fn solve_part2(input: &<Self::Input as aoc_helpers::scaffold::Parse>::Parsed) -> Self::Part2 {
@@ -94,12 +94,7 @@ impl Problem for Day08 {
         let mut regs = Default::default();
         for instr in input {
             instr.eval(&mut regs);
-            let current_highest = regs
-                .iter()
-                .map(|(_, v)| v)
-                .copied()
-                .max()
-                .unwrap_or_default();
+            let current_highest = regs.values().copied().max().unwrap_or_default();
             if highest_ever < current_highest {
                 highest_ever = current_highest;
             }

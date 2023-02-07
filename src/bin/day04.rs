@@ -36,11 +36,11 @@ impl Problem for Day04 {
     type Part2 = usize;
 
     fn solve_part1(input: &<Self::Input as aoc_helpers::scaffold::Parse>::Parsed) -> Self::Part1 {
-        input.iter().filter(|s| is_valid(*s)).count()
+        input.iter().filter(|s| is_valid(s)).count()
     }
 
     fn solve_part2(input: &<Self::Input as aoc_helpers::scaffold::Parse>::Parsed) -> Self::Part2 {
-        input.iter().filter(|s| is_really_valid(*s)).count()
+        input.iter().filter(|s| is_really_valid(s)).count()
     }
 }
 

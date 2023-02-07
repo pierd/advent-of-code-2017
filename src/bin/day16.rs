@@ -110,7 +110,7 @@ mod tests {
             "baedc".to_owned()
         );
         assert_eq!(
-            perform_dance(perform_dance(buffer.clone(), &moves), &moves)
+            perform_dance(perform_dance(buffer, &moves), &moves)
                 .into_iter()
                 .collect::<String>(),
             "ceadb".to_owned()

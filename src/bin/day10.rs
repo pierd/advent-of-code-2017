@@ -4,7 +4,7 @@ use aoc_helpers::{prelude::*, scaffold::Parse};
 struct Day10;
 
 fn vec_to_hex(v: Vec<usize>) -> String {
-    v.into_iter().map(|n| format!("{:02x}", n)).collect()
+    v.into_iter().map(|n| format!("{n:02x}")).collect()
 }
 
 impl Problem for Day10 {

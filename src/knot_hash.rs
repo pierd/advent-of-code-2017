@@ -80,7 +80,7 @@ mod tests {
     }
 
     fn vec_to_hex(v: Vec<u8>) -> String {
-        v.into_iter().map(|n| format!("{:02x}", n)).collect()
+        v.into_iter().map(|n| format!("{n:02x}")).collect()
     }
 
     #[test]
